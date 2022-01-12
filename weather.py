@@ -3,7 +3,10 @@ import tkinter
 
 #city weather function
 def getWeather():
-    print("test")
+    try:
+        print("test")
+    except:
+        print("error")
 
 
 
