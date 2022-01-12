@@ -1,25 +1,9 @@
 import http.client
 import tkinter
 
-#tkinter creation
-window = tkinter.Tk()
-window.title("City Weather App")
-
-#label
-cityLabel = tkinter.Label(window, text="City Name")
-cityLabel.grid(row=0, column=0)
-
-#textbar
-cityName = tkinter.StringVar()
-cityText = tkinter.Entry(window, textvariable=cityName)
-cityText.grid(row=0, column=1)
-
-#button
-
-#window display
-
-
-window.mainloop()
+#city weather function
+def getWeather():
+    print("test")
 
 
 
@@ -38,4 +22,25 @@ data = res.read()
 
 print(data.decode("utf-8"))
 
+#tkinter creation
+window = tkinter.Tk()
+window.title("City Weather App")
+
+#label
+cityLabel = tkinter.Label(window, text="City Name")
+cityLabel.grid(row=0, column=0)
+
+#textbar
+cityName = tkinter.StringVar()
+cityText = tkinter.Entry(window, textvariable=cityName)
+cityText.grid(row=0, column=1)
+
+#button
+cityButton = tkinter.Button(window, text="Search", command=getWeather())
+cityButton.grid(row=0, column=2)
+
+#window display
+
+
+window.mainloop()
 
