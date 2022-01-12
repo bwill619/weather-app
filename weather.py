@@ -7,7 +7,8 @@ import tkinter
 def getWeather():
     try:
         city = cityName.get()
-        print("test")
+        windowDisplay.delete(tkinter.END)
+        windowDisplay.insert(city)
     except:
         print("error")
 
