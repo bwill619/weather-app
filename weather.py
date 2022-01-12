@@ -1,9 +1,12 @@
 import http.client
 import tkinter
 
+
+
 #city weather function
 def getWeather():
     try:
+        city = cityName.get()
         print("test")
     except:
         print("error")
@@ -43,6 +46,8 @@ cityButton = tkinter.Button(window, text="Search", command=getWeather())
 cityButton.grid(row=0, column=2)
 
 #window display
+windowDisplay = tkinter.Text(window, height=10, width=50)
+windowDisplay.gird(row=1, column=0, columnspan = 4)
 
 
 window.mainloop()
