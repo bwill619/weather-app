@@ -26,7 +26,6 @@ conn.request("GET", "/find?q=charlotte&mode=null&lon=0&type=link%2C%20accurate&l
 res = conn.getresponse()
 data = res.read()
 
-print(data.decode("utf-8"))
 
 #tkinter creation
 window = tkinter.Tk()
