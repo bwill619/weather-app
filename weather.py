@@ -33,7 +33,7 @@ window = tkinter.Tk()
 window.title("City Weather App")
 
 #label
-cityLabel = tkinter.Label(window, text="City Name")
+cityLabel = tkinter.Label(window, text="Enter City Name:")
 cityLabel.grid(row=0, column=0)
 
 #textbar
@@ -46,8 +46,8 @@ cityButton = tkinter.Button(window, text="Search", command=getWeather())
 cityButton.grid(row=0, column=2)
 
 #window display
-windowDisplay = tkinter.Text(window, height=10, width=50)
-windowDisplay.gird(row=1, column=0, columnspan = 4)
+windowDisplay = tkinter.Text(window, height=10, width=60)
+windowDisplay.grid(row=1, column=0, columnspan = 4)
 
 
 window.mainloop()
