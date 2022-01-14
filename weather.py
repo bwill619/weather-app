@@ -1,7 +1,21 @@
 import http.client
 import tkinter
 
+myCity = 'charlotte'
 
+conn = http.client.HTTPSConnection("community-open-weather-map.p.rapidapi.com")
+
+headers = {
+    'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
+    'x-rapidapi-key': "4adf3b1b96mshbfea239c4b3144dp121a6ajsnab9b3858cb69"
+    }
+
+conn.request("GET", "/weather?q={myCity}&lat=0&lon=0&callback=test&id=2172797&lang=null&units=imperial&mode=xml", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 
 #city weather function
 def getWeather():
