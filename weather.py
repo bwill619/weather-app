@@ -1,28 +1,22 @@
 import http.client
 import tkinter
+import requests
 
+api = 'http://api.openweathermap.org/data/2.5/weather?=q'
 myCity = 'charlotte'
-
-conn = http.client.HTTPSConnection("community-open-weather-map.p.rapidapi.com")
-
-headers = {
-    'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
-    'x-rapidapi-key': "4adf3b1b96mshbfea239c4b3144dp121a6ajsnab9b3858cb69"
-    }
-
-conn.request("GET", "/weather?q={myCity}&lat=0&lon=0&callback=test&id=2172797&lang=null&units=imperial&mode=xml", headers=headers)
-
-res = conn.getresponse()
-data = res.read()
-
-print(data.decode("utf-8"))
+apiKey = '&APPID=585486b5753279c70569b010bac11b3c'
+units = '&imperial'
+url = api + myCity + apiKey + units
 
 #city weather function
 def getWeather():
     try:
-        city = cityName.get()
+        myCity = cityName.get()
+        url = api + myCity + apiKey + units
+        weather = requests.get(url).json(['main'])
+        currWeather = "The temperature is currently: " + str(weather['temp'])
         windowDisplay.delete(tkinter.END)
-        windowDisplay.insert(city)
+        windowDisplay.insert(currWeather)
     except:
         print("error")
 
