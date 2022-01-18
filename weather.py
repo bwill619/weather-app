@@ -5,7 +5,7 @@ print(requests.__file__)
 
 api = 'http://api.openweathermap.org/data/2.5/weather?=q'
 myCity = 'charlotte'
-apiKey = '&APPID=585486b5753279c70569b010bac11b3c'
+
 units = '&imperial'
 url = api + myCity + apiKey + units
 
