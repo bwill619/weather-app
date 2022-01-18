@@ -1,6 +1,7 @@
 import http.client
 import tkinter
 import requests
+print(requests.__file__)
 
 api = 'http://api.openweathermap.org/data/2.5/weather?=q'
 myCity = 'charlotte'
@@ -11,14 +12,15 @@ url = api + myCity + apiKey + units
 #city weather function
 def getWeather():
     try:
-        myCity = cityName.get()
         url = api + myCity + apiKey + units
         weather = requests.get(url).json(['main'])
         currWeather = "The temperature is currently: " + str(weather['temp'])
-        windowDisplay.delete(tkinter.END)
-        windowDisplay.insert(currWeather)
+        #windowDisplay.delete('1.0', tkinter.END)
+        #windowDisplay.insert('1.0', currWeather)
     except:
         print("error")
+
+
 
 
 
@@ -38,8 +40,8 @@ cityText = tkinter.Entry(window, textvariable=cityName)
 cityText.grid(row=0, column=1)
 
 #button
-cityButton = tkinter.Button(window, text="Search", command=getWeather())
-cityButton.grid(row=0, column=2)
+#cityButton = tkinter.Button(window, text="Search", command=getWeather())
+#cityButton.grid(row=0, column=2)
 
 #window display
 windowDisplay = tkinter.Text(window, height=10, width=60)
